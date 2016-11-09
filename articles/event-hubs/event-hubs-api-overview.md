@@ -150,6 +150,7 @@ public class SimpleEventProcessor : IEventProcessor
         this.partitionContext = context;
 
         return Task.FromResult<object>(null);
+        // return Task.CompletedTask; // from .Net 4.6
     }
 
     public async Task ProcessEventsAsync(PartitionContext context, IEnumerable<EventData> messages)
